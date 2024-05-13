@@ -8,9 +8,11 @@ LE = LabelEncoder()
 def get_dataset(dataset_name):
     if dataset_name == "Heart Attack":
         data = pd.read_csv("https://raw.githubusercontent.com/Yanlin852/DS4PH_final/main/heart.csv")
+        # data = pd.read_csv("/Users/1rin/Desktop/JHU/24spring/2_DS4PH/DS4PH_final/heart.csv")
         return data
     elif dataset_name == "Breast Cancer":
         data = pd.read_csv("https://raw.githubusercontent.com/Yanlin852/DS4PH_final/main/BreastCancer.csv")
+        # data = pd.read_csv("/Users/1rin/Desktop/JHU/24spring/2_DS4PH/DS4PH_final/BreastCancer.csv")
         data["diagnosis"] = LE.fit_transform(data["diagnosis"])
         data.replace([np.inf, -np.inf], np.nan, inplace=True)
         data["diagnosis"] = pd.to_numeric(data["diagnosis"], errors="coerce")
@@ -26,7 +28,9 @@ def selected_dataset(dataset_name):
     if dataset_name == "Heart Attack":
         X = data.drop(["output"], axis=1)
         Y = data.output
-        return X, Y
+        age = data.age
+        sex = data.sex
+        return X, Y, age, sex
     elif dataset_name == "Breast Cancer":
         X = data.drop(["id", "diagnosis"], axis=1)
         Y = data.diagnosis
@@ -35,6 +39,8 @@ def selected_dataset(dataset_name):
         if "class" in data.columns:
             X = data.drop(["class"], axis=1)
             Y = data['class']
-            return X, Y
+            age = data.Age
+            gender = data.Gender
+            return X, Y, age, gender
         else:
             raise ValueError("Column 'class' not found in the dataset")
