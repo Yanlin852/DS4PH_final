@@ -26,17 +26,17 @@ def plot_op(dataset_name):
     plt.title(f"Classes in {dataset_name}")
     if dataset_name == "Heart Attack":
         col1.write(Y)
-        sns.countplot(Y, palette='gist_heat')
+        sns.countplot(x = Y, palette='gist_heat')
         col2.pyplot()
 
     elif dataset_name == "Breast Cancer":
         col1.write(Y)
-        sns.countplot(Y, palette='gist_heat')
+        sns.countplot(x = Y, palette='gist_heat')
         col2.pyplot()
         
     elif dataset_name == "Diabetes":
         col1.write(Y)
-        sns.countplot(Y, palette='gist_heat')
+        sns.countplot(x = Y, palette='gist_heat')
         col2.pyplot()
 
 st.write("Shape of dataset: ",data.shape)
