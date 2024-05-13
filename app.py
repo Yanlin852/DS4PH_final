@@ -9,7 +9,7 @@ with st.echo("below"):
 
     show_pages(
         [
-            Page("streamlit_app.py", "Home", "🏠"),
+            Page("app.py", "Home", "🏠"),
             # Can use :<icon-name>: or the actual icon
             Page("page_one.py", "Our Data", ":books:"),
             Page("page_two.py", "Data Analysis", "📊"),
