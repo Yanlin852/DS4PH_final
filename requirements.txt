@@ -1,3 +1,4 @@
 st_pages
 scikit-learn
 xgboost
+seaborn
