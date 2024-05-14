@@ -2,3 +2,4 @@ st_pages
 scikit-learn==1.2.2 
 xgboost
 seaborn
+streamlit==1.32.2
