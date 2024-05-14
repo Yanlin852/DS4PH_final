@@ -19,7 +19,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from xgboost import XGBClassifier
 
 start_time=time.time()
-
+st.set option('deprecation.showPyplotGlobalUse', False)
 dataset_name=st.sidebar.selectbox("Select Dataset: ",('Heart Attack',"Breast Cancer","Diabetes"))
 classifier_name = st.sidebar.selectbox("Select Classifier: ",("Logistic Regression","KNN","SVM","Decision Trees",
                                                               "Random Forest","Gradient Boosting","XGBoost"))
